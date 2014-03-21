@@ -42,8 +42,8 @@ def droplist(parsed, d=[]):
 
 #send email with list of domains change user & passw for your gmail details and from and to address
 def emaillist(listofdomains):
-    user = 'GMAIL EMAIL'
-    passw = 'PASSWORD'
+    user = os.environ['GMAIL_USERNAME']
+    passw = os.environ['GMAIL_PASSWORD']
     smtp_host = 'smtp.gmail.com'
     smtp_port = 587
     server = smtplib.SMTP()
