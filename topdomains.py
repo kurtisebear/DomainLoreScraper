@@ -51,8 +51,8 @@ def emaillist(listofdomains):
     server.ehlo()
     server.starttls()
     server.login(user,passw)
-    fromaddr = 'GMAIL EMAIL'
-    toaddr = 'ANY EMAIL'
+    fromaddr = os.environ['GMAIL_USERNAME']
+    toaddr = os.environ['GMAIL_USERNAME']
     subject = 'Top Domains Dropping'
 
     msg = email.MIMEMultipart.MIMEMultipart()
