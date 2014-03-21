@@ -34,7 +34,6 @@ payload = ({
 	'submit': 'Log in'
 })
 
-print payload
 #get just domain and tag
 def droplist(parsed, d=[]):
     for c in parsed['droplist']:
