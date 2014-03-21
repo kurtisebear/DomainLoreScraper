@@ -4,6 +4,8 @@ import urllib
 import json
 import smtplib
 import email
+import os
+import config
 from email.MIMEMultipart import MIMEMultipart
 from email.Utils import COMMASPACE
 from email.MIMEBase import MIMEBase
@@ -26,13 +28,13 @@ auth_url = 'https://domainlore.co.uk/member/login'
 
 #send parms add your domainlore.co.uk username and password here
 payload = ({
-	'email': 'USERNAME',
-	'password': 'PASSWORD',
+	'email': os.environ['DLORE_USERNAME'],
+	'password': os.environ['DLORE_PASSWORD'],
 	'return_to': '',
 	'submit': 'Log in'
 })
 
-
+print payload
 #get just domain and tag
 def droplist(parsed, d=[]):
     for c in parsed['droplist']:
